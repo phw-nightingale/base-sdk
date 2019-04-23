@@ -254,4 +254,4 @@ http://127.0.0.1:8080
 {"code":200,"msg":"Welcome to Yiban Application.","data":null}
 ```
 
-## 如果用任何问题欢迎到Github的Issues提问。
+## 如果使用时有任何问题欢迎到Github的Issues提问。
