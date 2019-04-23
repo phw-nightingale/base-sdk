@@ -12,6 +12,14 @@
 
 通过易班开放平台来作为例子，展示如何在该平台上进行再次开发。
 
+## 下载项目
+```
+
+git clone https://github.com/phw-nightingale/base-sdk.git
+cd base-sdk
+mvn clean install #安装依赖
+
+```
 ## 框架目录结构
 先来看看项目的目录结构
 ```
@@ -247,3 +255,5 @@ http://127.0.0.1:8080
 ```
 {"code":200,"msg":"Welcome to Yiban Application.","data":null}
 ```
+
+如果用任何问题欢迎到Github的Issues提问。
