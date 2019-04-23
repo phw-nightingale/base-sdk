@@ -61,7 +61,7 @@
       #{str2,jdbcType=VARCHAR}, #{str3,jdbcType=VARCHAR}, #{str4,jdbcType=VARCHAR}, #{str5,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="xyz.frt.yiban.basesdk.entity.sys.User" >
+  <insert id="insertSelective" parameterType="xyz.frt.yiban.basesdk.entity.sys.User" keyProperty="id" useGeneratedKeys="true">
     insert into sys_user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
