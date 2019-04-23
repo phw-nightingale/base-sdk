@@ -14,11 +14,9 @@
 
 ## 下载项目
 ```
-
 git clone https://github.com/phw-nightingale/base-sdk.git
 cd base-sdk
 mvn clean install #安装依赖
-
 ```
 ## 框架目录结构
 先来看看项目的目录结构
