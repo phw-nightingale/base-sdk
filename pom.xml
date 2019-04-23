@@ -16,6 +16,7 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <!-- MVN打包时跳过测试 -->
         <skipTests>true</skipTests>
     </properties>
 
@@ -205,9 +206,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <!-- MVN打包时跳过测试 -->
                 <configuration>
                     <includeSystemScope>true</includeSystemScope>
+                    <skip>true</skip>
                 </configuration>
             </plugin>
             <!-- mybatis generator 自动生成代码插件 -->
