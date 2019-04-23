@@ -4,11 +4,11 @@
 这个框架在几月前就写好了，但是一直没得空写文档出来，今天打算将它分享出来。
 首先这个框架是在Spring Boot + Mybatis大框架下的二次封装，分为两个部分：
 
-1.可以叫作Web基础开发框架
+1. 可以叫作Web基础开发框架
 
 这是我近两年在Java Web开发上的总结和经验，封装了较多的基础操作，提供较为完善的数据库操作，包含Dao层、Service层、Controller层以及常用工具、拦截器配置、跨域配置、项目常用配置、服务端安全(JWT)等方面的配置。
 
-2.在上面的基础上加上对易班开放平台的支持
+2. 在上面的基础上加上对易班开放平台的支持
 
 通过易班开放平台来作为例子，展示如何在该平台上进行再次开发。
 
@@ -77,7 +77,7 @@ mvn clean install #安装依赖
 
 **下面通过User实体类来讲述如何使用本框架**
 
-1.首先通过mybatis映射文件的生成插件生成映射文件和实体类
+1. 首先通过mybatis映射文件的生成插件生成映射文件和实体类
 ```
 <!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名-->
 <table tableName="sys_user" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
@@ -85,7 +85,7 @@ mvn clean install #安装依赖
 在该注释下写入table标签的内容，tableName必须与数据库表名一致，domainObject为Java实体类名，后面的是mybatis插件自带的额外功能，我们全部关掉即可。
 然后通过该插件生成相应的文件。具体生成方法请自行百度。
 
-2.使用基类
+2. 使用基类
 完成生成文件后你应该新增了如下文件:
 ```
 /resources/mapper/UserMapper.xml
@@ -145,7 +145,7 @@ public interface UserMapper extends BaseMapper<User> {
 ```
 修改完毕。
 
-3.Service层
+3. Service层
 
 新建一个UserService.java文件，内容如下:
 ```
@@ -173,7 +173,7 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
 }
 
 ```
-3.Controller层
+4. Controller层
 
 新建一个UserController.java，内容如下:
 ```
@@ -206,7 +206,7 @@ public class UserController extends BaseController<User> {
 ```
 写上两个接口，/users和/users/{id}
 
-4.添加接口到拦截器的例外
+5. 添加接口到拦截器的例外
 ```
 找到/config/RegisterInterceptor.java
 
@@ -243,7 +243,7 @@ public class RegisterInterceptor implements WebMvcConfigurer {
 }
 ```
 
-5.启动服务器
+6. 启动服务器
 
 到这里，基本工作都完成了，启动一下服务器测试一下，启动成功后访问接口
 ```
@@ -254,4 +254,4 @@ http://127.0.0.1:8080
 {"code":200,"msg":"Welcome to Yiban Application.","data":null}
 ```
 
-如果用任何问题欢迎到Github的Issues提问。
+## 如果用任何问题欢迎到Github的Issues提问。
